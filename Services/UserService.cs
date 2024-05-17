@@ -9,11 +9,13 @@ namespace TeachersMVC.Services
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
+        private readonly ILogger<UserService> _logger;
 
-        public UserService(IUnitOfWork unitOfWork, IMapper mapper)
+        public UserService(IUnitOfWork unitOfWork, IMapper mapper, ILogger<UserService> logger)
         {
             _unitOfWork = unitOfWork;
             _mapper = mapper;
+            _logger = logger;
         }
 
         public async Task<User> GetUserByUsernameAsync(string username)
@@ -25,6 +27,7 @@ namespace TeachersMVC.Services
         {
             var user = await _unitOfWork.UserRepository.GetUserAsync(credentials.Username!, credentials.Password!);
             if (user == null) return null;
+            _logger.LogInformation("User logged in");
             return user;
         }
 
@@ -35,12 +38,14 @@ namespace TeachersMVC.Services
                 throw new ApplicationException("User already exists!");
             }
             await _unitOfWork.SaveAsync();
+            _logger.LogInformation("User signed up");
         }
 
         public async Task<User> UpdateUserAccountInfoAsync(UserPatchDTO request, int userId)
         {
             var user = await _unitOfWork.UserRepository.UpdateUserAsync(userId, request);
             await _unitOfWork.SaveAsync();
+            _logger.LogInformation("User updated");
             return user;
         }
     }
