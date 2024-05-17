@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 using TeachersMVC.Data;
 using TeachersMVC.Repositories;
+using Serilog;
 
 namespace TeachersMVC
 {
@@ -10,6 +11,10 @@ namespace TeachersMVC
 		public static void Main(string[] args)
 		{
 			var builder = WebApplication.CreateBuilder(args);
+			builder.Host.UseSerilog((context, config) =>
+			{
+				config.ReadFrom.Configuration(context.Configuration);
+			});
 			var connString = builder.Configuration.GetConnectionString("DefaultConnection");
 			
 			builder.Services.AddDbContext<TeachersMvcdbContext>(options => options.UseSqlServer(connString));
