@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Dioni\\source\\repos\\TeachersMVC\\TeachersMVC\\TeachersMVC.csproj": {}
+    "C:\\Users\\agame\\source\\repos\\TeachersMVC\\TeachersMVC\\TeachersMVC.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Dioni\\source\\repos\\TeachersMVC\\TeachersMVC\\TeachersMVC.csproj": {
+    "C:\\Users\\agame\\source\\repos\\TeachersMVC\\TeachersMVC\\TeachersMVC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Dioni\\source\\repos\\TeachersMVC\\TeachersMVC\\TeachersMVC.csproj",
+        "projectUniqueName": "C:\\Users\\agame\\source\\repos\\TeachersMVC\\TeachersMVC\\TeachersMVC.csproj",
         "projectName": "TeachersMVC",
-        "projectPath": "C:\\Users\\Dioni\\source\\repos\\TeachersMVC\\TeachersMVC\\TeachersMVC.csproj",
-        "packagesPath": "C:\\Users\\Dioni\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Dioni\\source\\repos\\TeachersMVC\\TeachersMVC\\obj\\",
+        "projectPath": "C:\\Users\\agame\\source\\repos\\TeachersMVC\\TeachersMVC\\TeachersMVC.csproj",
+        "packagesPath": "C:\\Users\\agame\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\agame\\source\\repos\\TeachersMVC\\TeachersMVC\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Dioni\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\agame\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -34,6 +34,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -76,7 +81,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.205/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
