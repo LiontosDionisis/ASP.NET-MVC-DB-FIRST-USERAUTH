@@ -1,5 +1,7 @@
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 using TeachersMVC.Data;
+using TeachersMVC.Repositories;
 
 namespace TeachersMVC
 {
@@ -12,6 +14,15 @@ namespace TeachersMVC
 			
 			builder.Services.AddDbContext<TeachersMvcdbContext>(options => options.UseSqlServer(connString));
 			builder.Services.AddControllersWithViews();
+			builder.Services.AddRepositories();
+			builder.Services.AddControllersWithViews();
+
+			builder.Services.AddAuthentication(
+				CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(option =>
+				{
+					option.LoginPath = "/User/Login";
+					option.ExpireTimeSpan = TimeSpan.FromMinutes(30);
+				});
 
 			var app = builder.Build();
 
@@ -32,7 +43,7 @@ namespace TeachersMVC
 
 			app.MapControllerRoute(
 				name: "default",
-				pattern: "{controller=Home}/{action=Index}/{id?}");
+				pattern: "{controller=User}/{action=Login}/{id?}");
 
 			app.Run();
 		}
