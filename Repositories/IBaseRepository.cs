@@ -6,7 +6,7 @@
 		Task<T> GetAsync(int id);
 		Task AddAsync(T entity);
 		Task AddRangeAsync(IEnumerable<T> entities);
-		void UpdateAsync(int id);
+		void UpdateAsync(T entity);
 		Task<bool> DeleteAsync(int id);
 		Task<int> GetCountAsync();
 	}
