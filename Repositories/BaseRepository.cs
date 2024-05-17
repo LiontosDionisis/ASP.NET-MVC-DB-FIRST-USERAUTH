@@ -47,9 +47,9 @@ namespace TeachersMVC.Repositories
         public virtual async Task<T> GetAsync(int id)
         {
             var entity = await _table.FindAsync(id);
-            return entity;
+            return entity!;
         }
-
+        
         public virtual async Task<int> GetCountAsync()
         {
             var count = await _table.CountAsync();
